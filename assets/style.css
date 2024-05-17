@@ -1,0 +1,18 @@
+.datos.cp .ginput_container_text{
+    display: flex;
+}
+
+.datos.cp .ginput_container_text:after{
+    content:"Buscar";
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background:#204ce5;
+    color:white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius:5px;
+    margin-left: 4px;
+    pointer-events:auto;
+}
+
