@@ -16,3 +16,10 @@
     pointer-events:auto;
 }
 
+.datos.cp .ginput_container_text:hover:after{
+    background:#001ab3;
+}
+
+.datos.cp .gfield_description{
+    display:none;
+}
