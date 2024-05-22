@@ -3,10 +3,11 @@
 
     generic_fill_fields('.grupo1');
     generic_fill_fields('.grupo2');
+    generic_fill_fields('.grupo3');
+    generic_fill_fields('.grupo4');
 
     function generic_fill_fields(grupo_sel) {
         let data = {};
-
 
         const cpContainer = $(grupo_sel + '.cp .ginput_container_text');
         const cpDesc = $(grupo_sel + '.cp .gfield_description');

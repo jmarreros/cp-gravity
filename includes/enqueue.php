@@ -18,5 +18,8 @@ class Enqueue {
 				'ajaxurl'         => admin_url( 'admin-ajax.php' ),
 				'nonce'           => wp_create_nonce( 'ajax-cp-nonce' ),
 			] );
+
+		wp_enqueue_style( 'cp-gravity-style' );
+		wp_enqueue_script( 'cp-gravity-script' );
 	}
 }

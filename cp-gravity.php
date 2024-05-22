@@ -3,7 +3,7 @@
 Plugin Name: CP Gravity
 Plugin URI: https://decodecms.com
 Description: Plugin que lee de una BD tablas de codigo postal y autocompleta campos de Gravity Forms.
-Version: 1.0
+Version: 1.1.1
 Author: Jhon Marreros Guzmán
 Author URI: https://decodecms.com
 Text Domain: cp-gravity
@@ -16,7 +16,7 @@ namespace dcms\cpgravity;
 
 use dcms\cpgravity\includes\Submenu;
 use dcms\cpgravity\includes\Enqueue;
-use dcms\cpgravity\includes\Gravity;
+//use dcms\cpgravity\includes\Gravity;
 use dcms\cpgravity\includes\Process;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,7 +42,7 @@ final class Loader{
 		include_once ( DCMS_CPGRAVITY_PATH . '/helpers/helper.php');
 		include_once ( DCMS_CPGRAVITY_PATH . '/includes/submenu.php');
 		include_once ( DCMS_CPGRAVITY_PATH . '/includes/enqueue.php');
-		include_once ( DCMS_CPGRAVITY_PATH . '/includes/gravity.php');
+//		include_once ( DCMS_CPGRAVITY_PATH . '/includes/gravity.php');
 		include_once ( DCMS_CPGRAVITY_PATH . '/includes/database.php');
 		include_once ( DCMS_CPGRAVITY_PATH . '/includes/process.php');
 	}
@@ -72,7 +72,7 @@ final class Loader{
 		$this->add_link_plugin();
 		new SubMenu();
 		new Enqueue();
-		new Gravity();
+//		new Gravity();
 		new Process();
 	}
 

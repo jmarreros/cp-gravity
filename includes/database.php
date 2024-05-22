@@ -6,10 +6,10 @@ use wpdb;
 
 class Database {
 
-	private wpdb $wpdb;
-	private string $data_cp;
-	private string $data_municipios;
-	private string $data_ccaa_provincias;
+	private $wpdb;
+	private $data_cp;
+	private $data_municipios;
+	private $data_ccaa_provincias;
 
 	public function __construct() {
 		global $wpdb;
