@@ -19,6 +19,7 @@
         const provincia = $(grupo_sel + '.provincia input');
         const comunidad = $(grupo_sel + '.comunidad input');
 
+        let ajaxInProgress = false;
 
         $(cities).change(function () {
             if (data) {
@@ -38,17 +39,28 @@
 
 
         $(cpContainer).find('input').on('focusout', function () {
-            ajax_call();
-        });
-
-        $(cpContainer).click(function (e) {
-            if (e.offsetX > $(this).width() - 70) {
+            if (!ajaxInProgress) {
                 ajax_call();
             }
         });
 
+        $(cpContainer).click(function (e) {
+            if (e.offsetX > $(this).width() - 70) {
+                if (!ajaxInProgress) {
+                    ajax_call();
+                }
+            }
+        });
 
-        function ajax_call(){
+        $(document).ajaxStart(function () {
+            ajaxInProgress = true;
+        });
+
+        $(document).ajaxStop(function () {
+            ajaxInProgress = false;
+        });
+
+        function ajax_call() {
             const code = $(cpContainer).find('input').val();
             $.ajax({
                 url: cpgravity_var.ajaxurl,
@@ -71,8 +83,8 @@
                     if (res.success) {
                         if (res.data.length > 0) {
 
-                            if ( res.data.length > 1){
-                                $(cities).append('<option value="">Selecciona una ciudad</option>');
+                            if (res.data.length > 1) {
+                                $(cities).append('<option value="">Selecciona una localidad</option>');
                             }
 
                             res.data.forEach(item => {
@@ -81,7 +93,7 @@
 
                             data = res.data;
 
-                            if ( res.data.length === 1){
+                            if (res.data.length === 1) {
                                 $(cities).change();
                             }
 

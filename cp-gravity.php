@@ -2,10 +2,10 @@
 /*
 Plugin Name: CP Gravity
 Plugin URI: https://decodecms.com
-Description: Plugin que lee de una BD tablas de codigo postal y autocompleta campos de Gravity Forms.
-Version: 1.1.1
-Author: Jhon Marreros Guzmán
-Author URI: https://decodecms.com
+Description: Plugin que lee de una BD tablas de código postal y autocompleta campos de Gravity Forms.
+Version: 1.1.4
+Author: Webservi
+Author URI: https://webservi.es
 Text Domain: cp-gravity
 Domain Path: languages
 License: GPL-2.0+
@@ -30,7 +30,7 @@ final class Loader{
 
 	// Define all the constants we need
 	public function define_constants():void{
-		define ('DCMS_CPGRAVITY_VERSION', '1.0');
+		define ('DCMS_CPGRAVITY_VERSION', '1.1.4');
 		define ('DCMS_CPGRAVITY_PATH', plugin_dir_path( __FILE__ ));
 		define ('DCMS_CPGRAVITY_URL', plugin_dir_url( __FILE__ ));
 		define ('DCMS_CPGRAVITY_BASE_NAME', plugin_basename( __FILE__ ));
